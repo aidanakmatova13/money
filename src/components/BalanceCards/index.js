@@ -4,7 +4,7 @@ import {Box, Card, CardContent, Typography} from "@mui/material";
 
 const BalanceCards = () => {
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={{marginBottom:'30px'}}>
             <Grid item xs={4}>
                 <Card>
                     <Box sx={{bgcolor: 'warning.main', color: 'white'}}>
