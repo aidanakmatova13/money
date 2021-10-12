@@ -23,6 +23,9 @@ export const tasksReducer = (state = initialState, action) => {
                 currentBalance: state.currentBalance + +deletedItem.amount,
                 costs: state.costs - +deletedItem.amount
             }
+        case 'SORT_TASKS':
+            state.tasks.sort((a, b) => state.sort === 'asc' ? a.amount - b.amount : b.amount - a.amount)
+            return {...state, tasks: [...state.tasks], sort: state.sort === 'asc' ? 'desc' : 'asc'}
         default:
             return state
     }

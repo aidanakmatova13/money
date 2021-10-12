@@ -6,6 +6,9 @@ import {delItem} from "../../redux/actions/tasksActions";
 const ExpensesTable = () => {
     const tasks = useSelector(store => store.tasks.tasks)
     const dispatch = useDispatch()
+    const sortTasks = () =>{
+        dispatch({type: 'SORT_TASKS'})
+    }
     return (
         <>
             {tasks.length ?
@@ -15,7 +18,7 @@ const ExpensesTable = () => {
                             <TableRow>
                                 <TableCell>Дата</TableCell>
                                 <TableCell align="right">На что потратили</TableCell>
-                                <TableCell align="right">Сумма</TableCell>
+                                <TableCell align="right" onClick={sortTasks()}>Сумма</TableCell>
                                 <TableCell align="right">Удалить</TableCell>
                             </TableRow>
                         </TableHead>
